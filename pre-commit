@@ -1,0 +1,20 @@
+#!/bin/bash
+
+repo_dir=`git rev-parse --show-toplevel`
+
+message="[Policy] Checking code in $repo_dir with isort..."
+# echo with color: https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
+echo -e "\033[1;34mInfo: $message\033[0m"
+
+isort --check $repo_dir
+
+if [ $? -eq 1 ]; then
+    message="[Policy] isort check failed, please use isort to format your code."
+    echo -e "\033[1;31mERROR: $message\033[0m";
+    exit 1
+else
+    message="[Policy] isort black checking."
+    echo -e "\033[1;32mOK: $message\033[0m"
+    exit 0
+fi
+

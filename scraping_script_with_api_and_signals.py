@@ -1,9 +1,10 @@
 # Run the spider with the internal API of Scrapy:
+from scraping_proj.spiders.quotes import QuoteSpider
 from scrapy import signals
-from scrapy.crawler import Crawler, CrawlerProcess
+from scrapy.crawler import Crawler
+from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
 
-from scraping_proj.spiders.quotes import QuoteSpider
 
 settings = get_project_settings()
 process = CrawlerProcess(settings)

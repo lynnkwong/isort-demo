@@ -1,6 +1,5 @@
-import scrapy
-
 from scraping_proj.items import AuthorItem
+import scrapy
 
 
 class AuthorSpider(scrapy.Spider):

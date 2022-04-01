@@ -1,6 +1,5 @@
-import scrapy
-
 from scraping_proj.items import QuoteItem
+import scrapy
 
 
 class QuoteSpider(scrapy.Spider):
